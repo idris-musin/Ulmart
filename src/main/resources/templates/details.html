@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" data-th-href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css}"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <div class="row justify-content-sm-center mt-3">
+        <div class="col col-sm-6">
+
+            <div class="card">
+
+                <div class="card-body">
+                    <div class="card-title">
+                        <h2>[[ ${product.getName()} ]]</h2>
+                    </div>
+                </div>
+
+                <div>
+                    <ul class="list-group list-group-flush"
+                        data-th-if="${product instanceOf T(ru.itpark.ulmart.domain.IPhone)}">
+                        <li class="list-group-item">Price: [[ ${product.getPrice()} ]] rub</li>
+                        <li class="list-group-item">OS: [[ ${product.getOs()} ]]</li>
+                        <li class="list-group-item">Model: [[ ${product.getModel()} ]]</li>
+                        <li class="list-group-item">Color: [[ ${product.getColor()} ]]</li>
+                        <li class="list-group-item">Memory size: [[ ${product.getMemorySize()} ]]</li>
+                    </ul>
+
+                    <ul class="list-group list-group-flush"
+                        data-th-if="${product instanceOf T(ru.itpark.ulmart.domain.TShirt)}">
+                        <li class="list-group-item">Price: [[ ${product.getPrice()} ]] rub</li>
+                        <li class="list-group-item">Size: [[ ${product.getSize()} ]]</li>
+                        <li class="list-group-item">Color: [[ ${product.getColor()} ]]</li>
+                    </ul>
+
+                    <ul class="list-group list-group-flush"
+                        data-th-if="${product instanceOf T(ru.itpark.ulmart.domain.Electrolux)}">
+                        <li class="list-group-item">Price: [[ ${product.getPrice()} ]] rub</li>
+                        <li class="list-group-item">Type: [[ ${product.getType()} ]]</li>
+                        <li class="list-group-item">Oven Volume: [[ ${product.getOvenVolume()} ]] litres</li>
+                        <li class="list-group-item">Width: [[ ${product.getWidth()} ]] sm</li>
+                        <li class="list-group-item">Depth: [[ ${product.getDepth()} ]] sm</li>
+                        <li class="list-group-item">Height: [[ ${product.getHeight()} ]] sm</li>
+                    </ul>
+
+                    <div class="card-body">
+                        <a class="btn btn-primary"
+                           data-th-href="@{/edit/{id} (id=${product.getId()})}">Редактировать</a>
+                        <form class="d-inline" data-th-action="@{/remove/{id} (id=${product.getId()})}"
+                              method="post">
+                            <button class="btn btn-danger">Удалить</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" data-th-href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css}"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Редактировать</h1>
+
+            <form class="mt-3" data-th-action="@{/edit/IPhone/{id} (id=${product.getId()})}" method="post"
+                  data-th-if="${product instanceOf T(ru.itpark.ulmart.domain.IPhone)}">
+
+                <div class="form-group">
+                    <input class="form-control" type="text" name="name" placeholder="name"
+                           data-th-value="${product.getName()}">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="price" placeholder="price"
+                           data-th-value="${product.getPrice()}">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="os" placeholder="OS"
+                           data-th-value="${product.getOs()}">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="model" placeholder="model"
+                           data-th-value="${product.getModel()}">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="color" placeholder="color"
+                           data-th-value="${product.getColor()}">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="memorySize" placeholder="memory size"
+                           data-th-value="${product.getMemorySize()}">
+                </div>
+
+                <button class="btn btn-primary">Сохранить</button>
+
+            </form>
+
+            <form class="mt-3" data-th-action="@{/edit/TShirt/{id} (id=${product.getId()})}" method="post"
+                  data-th-if="${product instanceOf T(ru.itpark.ulmart.domain.TShirt)}">
+
+                <div class="form-group">
+                    <input class="form-control" type="text" name="name" placeholder="name"
+                           data-th-value="${product.getName()}">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="price" placeholder="price"
+                           data-th-value="${product.getPrice()}">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="size" placeholder="size"
+                           data-th-value="${product.getSize()}">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="color" placeholder="color"
+                           data-th-value="${product.getColor()}">
+                </div>
+
+                <button class="btn btn-primary">Сохранить</button>
+
+            </form>
+
+            <form class="mt-3" data-th-action="@{/edit/Electrolux/{id} (id=${product.getId()})}" method="post"
+                  data-th-if="${product instanceOf T(ru.itpark.ulmart.domain.Electrolux)}">
+
+                <div class="form-group">
+                    <input class="form-control" type="text" name="name" placeholder="name"
+                           data-th-value="${product.getName()}">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="price" placeholder="price"
+                           data-th-value="${product.getPrice()}">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="type" placeholder="type"
+                           data-th-value="${product.getType()}">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="ovenVolume" placeholder="oven volume"
+                           data-th-value="${product.getOvenVolume()}">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="width" placeholder="width"
+                           data-th-value="${product.getWidth()}">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="depth" placeholder="depth"
+                           data-th-value="${product.getDepth()}">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="height" placeholder="height"
+                           data-th-value="${product.getHeight()}">
+                </div>
+
+                <button class="btn btn-primary">Сохранить</button>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
