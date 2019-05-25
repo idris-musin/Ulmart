@@ -1,7 +1,7 @@
 language: java
 jdk: oraclejdk11
 
-script: mvn -e verify
+script: ./mvnw -e verify
 
 before_install:
   - chmod +x mvnw
@@ -9,9 +9,7 @@ before_install:
 after_success:
   - bash <(curl -s https://codecov.io/bash)
 
-notifications:
-  email:
-    recipients:
-      - musin.idris@gmail.com
-    on_failure: always
-    on_success: change
+deploy:
+  provider: heroku
+  api_key: $HEROKU_KEY
+  app: spring-boot-itpark
