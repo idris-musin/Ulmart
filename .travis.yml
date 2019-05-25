@@ -12,4 +12,4 @@ after_success:
 deploy:
   provider: heroku
   api_key: $HEROKU_KEY
-  app: spring-boot-itpark
+  app: ulmart-web-site
